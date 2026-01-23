@@ -126,7 +126,8 @@ services:
       POSTGRES_USER: ${DD_DATABASE_USER:-defectdojo}
       POSTGRES_PASSWORD: ${DD_DATABASE_PASSWORD:-defectdojo}
     volumes:
-      - defectdojo_postgres:/var/lib/postgresql/data
+      - defectdojo_postgres:/var/lib/postgresql/18/docker
+      # but better for later migration is - defectdojo_postgres:/var/lib/postgresql/
   valkey:
     image: valkey/valkey:7.2.11-alpine@sha256:9e483e0fe4c98b631b166b41d530c7ff1b8009a44f261bff28e9d1e2e27db58d
     volumes:
